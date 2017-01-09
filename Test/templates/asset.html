@@ -1,0 +1,22 @@
+
+{% extends 'bootstrap_index.html' %}
+
+<body>
+    {% block block_left %}
+        资产列表
+    {% endblock %}
+    {% block block_right %}
+        {{ request.user.userprofile.host.select_related }}
+        {{ request.user.userprofile.host_groups.select_related }}
+        <ul>
+        {% for group in request.user.userprofile.host_groups.select_related %}
+            <li>{{ group.name }}</li>
+            <ul>
+                {% for host in group.host_set.select_related %}
+                    {{ host.hostname }} --> {{ host.ip_addr }} --> {{ host.idc.name }}
+                {% endfor %}
+            </ul>
+        {% endfor %}
+        </ul>
+    {% endblock %}
+</body>

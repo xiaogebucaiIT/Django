@@ -1,0 +1,15 @@
+
+{% extends 'bootstrap_index.html' %}
+
+<body>
+    {% block block_left %}
+        主机列表
+    {% endblock %}
+    {% block block_right %}
+        主机详情
+        {{ request.path }}
+    {% endblock %}
+
+
+
+</body>

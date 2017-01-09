@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Django</title>
+</head>
+<body>
+    <ol style="display: inline">
+    <li>首页</li>
+    <li>主机</li>
+    <li>资产</li>
+    <li>配置</li>
+</ol>
+
+   <hr>
+    {% block page-content %}
+    <h1> haha </h1>
+    {{  point }}
+
+    {{ n_info }}
+    {% for k,v in n_info.items %}
+        <li style="color: cadetblue">{{ k }} : {{ v }} </li>
+    {% endfor %}
+    {% endblock %}
+<hr>
+footer
+
+</body>
+</html>
